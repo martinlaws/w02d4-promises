@@ -1,35 +1,41 @@
 const fs = require('fs').promises;
 
-const p = fs.readFile('data/p1.txt', 'utf8'); // => Promise 1
-// console.log('p first: ', p); // p.state => pending
+const p = fs.readFile('data/p1.txt', 'utf8');
 
-const finalDoc = [];
+// console.log(p);
+let finalDoc = [];
 
 p
-  .then((data) => {
-    // console.log('p after: ', p); // p.state => fulfilled
-    // console.log('DATA: ', data);
+  .then((data) => { // success callback
+    // console.log(data);
     finalDoc.push(data);
-    return fs.readFile('data/p2.txt', 'utf8') // => Promise 2
+    // return 'KV' // value
+    return fs.readFile('data/p2.txt', 'utf8'); // => return Promise { <pending> }
   })
   .then((data) => {
+    // console.log(data);
     finalDoc.push(data);
-    return fs.readFile('data/p3.txt', 'utf8') // => Promise 3
+    return fs.readFile('data/p3fsadfsdafa.txt', 'utf8'); // => return 
   })
   .then((data) => {
+    // console.log(data);
     finalDoc.push(data);
-    return fs.readFile('data/p4.txt', 'utf8') // => Promise 4
+    return fs.readFile('data/p4.txt', 'utf8'); // => return 
   })
   .then((data) => {
+    // console.log(data);
     finalDoc.push(data);
-    console.log('in final .then, finalDoc = ', finalDoc);
+    console.log(finalDoc);
   })
   .catch((err) => {
-    console.log('in catch: ', finalDoc);
-    console.log('Error: ', err.message);
+    console.log('Could not successfully read all 4 files');
+    console.log(err);
+    console.log(finalDoc);
   });
-  
-console.log('last line: ', finalDoc);
 
+console.log('AFTER PROMISE');
 
-
+// Promises have .then
+// The .then function returns a promise
+// The return value of the prev .then is the argument into the callback for that new promise
+// For the same promise, calling .then multiple times with diff callbacks, will trigger those callbacks in order with the same argument/data

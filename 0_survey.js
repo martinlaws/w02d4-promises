@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 rl.question('what is your name?', (one) => {
 
-  rl.question('what\'s an activity you like doing? ', (two ) => {
+  rl.question('what\'s an activity you like doing? ', (two) => {
 
     rl.question('what do you listen to while doing that? ', (three) => {
           
