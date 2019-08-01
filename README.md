@@ -59,5 +59,5 @@ We didn't get to this, and that's fine. It would have been too packed of a lectu
 
 ### 5. Final Points
 
-- Promises are also called Futures, Delayed, Deffered, etc. See <https://en.wikipedia.org/wiki/Futures_and_promises>
+- Promises are also called Futures, Delayed, Deferred, etc. See <https://en.wikipedia.org/wiki/Futures_and_promises>
 - **Don't use `async/await`**! This is a new and easier way to do asynchronous operations without worring about callbacks _at all_. Underneath, promises are being used. Therefore we want you to still spend time getting comfortable with promises and NOT use `async/await` until final projects.
