@@ -49,7 +49,7 @@ Here's a summary of how they work and are used, in our words:
 - When a promise is "fulfilled" (eg: file read successfully), the promise will call the callbacks inside
 - We can call .then on a promise, we pass it a callback to handle SUCCESS
 - .then returns IMMEDIATELY as well
-  - .then also returns the same promise
+  - .then also returns a (new) promise
 - Whatever our .then callback returns, can be fed into a subsequent .then callback
   - However, if we return a promise, then it actually passes the results/resolution of the promise into the next callback
   

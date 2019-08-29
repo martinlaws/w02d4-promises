@@ -1,39 +1,43 @@
 const fs = require('fs');
 
-let finalDoc = [];
+// Problem: Read the data files ** in order **, creating one final string as a result
 
-let counter = 0;
+const finalDoc = [];
 
-fs.readFile('data/p1.txt', 'utf8', (err, data) => {
+fs.readFile('data/p1.txt', 'utf8', (err, p1) => {
   if (err) {
-    console.log(err.message);
-    return
+    // stop 
+    return console.log('YIKES. Failed to read p1: ', err);
   }
-  finalDoc.push(data);
+  console.log('p1: ', p1);
+  finalDoc.push(p1);
 
-  counter++;
-  if (counter === 2) {
-    console.log('GOT IT ALL!', finalDoc);
-  }
+  fs.readFile('data/p2.txt', 'utf8', (err, p2) => {
+    if (err) {
+      // stop 
+      return console.log('YIKES. Failed to read p2: ', err);
+    }
+    console.log('p2: ', p2);
+    finalDoc.push(p2);
+
+    fs.readFile('data/p3.txt', 'utf8', (err, p3) => {
+      if (err) {
+        // stop 
+        return console.log('YIKES. Failed to read p3: ', err);
+      }
+      console.log('p3: ', p3);
+      finalDoc.push(p3);
+
+      fs.readFile('data/p4.txt', 'utf8', (err, p4) => {
+        if (err) {
+          // stop 
+          return console.log('YIKES. Failed to read p4: ', err);
+        }
+        console.log('p4: ', p4);
+        finalDoc.push(p4);
+        console.log(finalDoc.join('\n'));
+      });
+    });
+  });
+  
 });
-
-fs.readFile('data/p2.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.log(err.message);
-    return
-  }
-  finalDoc.push(data);
-  counter++;
-
-  if (counter === 2) {
-    console.log('GOT IT ALL!', finalDoc);
-  }
-});
-
-// Dangerous hackery.
-// setTimeout(() => {
-//   console.log('finalDoc after timeout:', finalDoc); // => ???
-// }, 4);
-
-console.log(finalDoc); // => []
-console.log('END OF FILE (LAST LINE OF CODE)');

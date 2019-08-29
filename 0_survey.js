@@ -1,3 +1,6 @@
+// Fun Profile Generator - W2D2 Challenge 
+// https://web.compass.lighthouselabs.ca/days/w02d2/activities/867
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
