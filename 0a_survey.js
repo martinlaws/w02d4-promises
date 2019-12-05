@@ -8,7 +8,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
 rl.question('what is your name?', (one) => {
 
   rl.question('what\'s an activity you like doing? ', (two) => {
