@@ -6,8 +6,10 @@
 What? 
 
 ```js
-a()
-b()
+a(() => {
+  b()
+})
+
 ```
 
 - Function that's passed into another function as a variable/arg
@@ -31,7 +33,7 @@ Because one relies on the other.
 
 ## 3. Promise-based Solution (Preview) [10m]
 
-- Callbacks are still used with Promises, just not the crazy stairecase/waterfall hell.
+- Callbacks are still used with Promises, just not the crazy staircase/waterfall hell.
 
 - As a preview of things to come, let's look at the solution for it.
 - Note the separate npm module
@@ -48,5 +50,3 @@ Read the data files ** in order **, creating one final string as a result
 ## 6. Now with Promises [20m]
 
 ## 7. Stretch: Create Promises [20m]
-
-## 8. Stretch: Promise.all and Promise.race (introduction) [5m]

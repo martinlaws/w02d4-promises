@@ -7,8 +7,6 @@ const rlp = readline.createInterface({
 
 const answers = [];
 
-// r.q('q1').then(() => { }).then().then()
-
 rlp.questionAsync('What do you think of Node.js? ')
   .then((answer) => {
     answers.push(answer);
@@ -38,6 +36,7 @@ rlp.questionAsync('What do you think of Node.js? ')
     answers.push(answer);
     rlp.close();
     const [node, name, activity, music, meal, food, sport] = answers;
+
 
     console.log();
     console.log('Your profile is ready!!');
