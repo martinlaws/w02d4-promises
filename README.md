@@ -1,5 +1,6 @@
-W2D4 with KV - Promises
+W2D4 - Promises
 ====
+Big props to KV for the demo idea and notes 👊
 
 More about Asynchronous Flow through Promises. We will also spent some time talking about error handling (with promises at least).
 
