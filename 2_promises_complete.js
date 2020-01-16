@@ -31,11 +31,10 @@ const readFourAgileFiles = function(done) {
       finalDoc.push(data4); 
       // console.log('DONE, finalDoc is: ', finalDoc);
       return finalDoc;
-      // return finalDoc;
     });
 }
 
-// can't return a result synchronously.
+// can't return a result synchronously - this will return undefined
 // const result = readFourAgileFiles();
 // console.log(result);
 
